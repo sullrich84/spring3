@@ -1,0 +1,5 @@
+
+    SPRING 3 SAMPLE PROJECT
+    Active Profiles:    ${spring.profiles.active:${AnsiColor.CYAN}LOCAL DEVELOPMENT${AnsiColor.DEFAULT}}
+    Spring Version:     ${spring-boot.version}
+    Datasource Url:     ${spring.datasource.url}
