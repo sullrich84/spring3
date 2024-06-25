@@ -28,14 +28,22 @@ extra["springModulithVersion"] = "1.2.0"
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-data-rest")
+	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.springframework.modulith:spring-modulith-starter-core")
 	implementation("org.springframework.modulith:spring-modulith-starter-jpa")
+	implementation("org.springframework.boot:spring-boot-docker-compose")
+	implementation("io.github.oshai:kotlin-logging-jvm:5.1.0")
 
-	developmentOnly("org.springframework.boot:spring-boot-docker-compose")
-
+	runtimeOnly("org.springframework.modulith:spring-modulith-observability")
+	runtimeOnly("org.springframework.modulith:spring-modulith-starter-insight")
+	runtimeOnly("org.springframework.modulith:spring-modulith-actuator")
+	runtimeOnly("io.micrometer:micrometer-registry-prometheus")
 	runtimeOnly("org.postgresql:postgresql")
+
+	implementation("io.micrometer:micrometer-tracing-bridge-brave")
+	implementation("io.zipkin.reporter2:zipkin-reporter-brave")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")

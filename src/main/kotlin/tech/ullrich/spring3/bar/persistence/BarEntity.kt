@@ -1,4 +1,4 @@
-package tech.ullrich.spring3.modules.bar
+package tech.ullrich.spring3.bar.persistence
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue

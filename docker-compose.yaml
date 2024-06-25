@@ -7,3 +7,7 @@ services:
       - 'POSTGRES_PASSWORD=mySecret'
     ports:
       - '15432:5432'
+  zipkin:
+    image: 'openzipkin/zipkin'
+    ports:
+      - '9411:9411'

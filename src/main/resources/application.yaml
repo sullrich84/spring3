@@ -1,12 +1,32 @@
 spring:
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration
-  application:
-    name: spring3
-  web:
-    resources:
-      add-mappings: false
+  docker:
+    compose:
+      enabled: true
+      file: docker-compose.yaml
+      skip:
+        in-tests: false
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create
 server:
   error:
     whitelabel:
       enabled: false
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: modulith, health, metrics
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411
+  tracing:
+    sampling:
+      probability: 1.0

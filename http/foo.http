@@ -1,0 +1,9 @@
+### Create new foo entry
+< {% request.variables.set("value", $random.integer()) %}
+POST http://localhost:8080/foos
+Content-Type: application/json
+
+{
+  "name": "Foo #{{value}}",
+  "value": {{value}}
+}

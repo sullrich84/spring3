@@ -4,8 +4,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class Spring3Application
+class Spring3Application {
 
-fun main(args: Array<String>) {
-    runApplication<Spring3Application>(*args)
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            runApplication<Spring3Application>(*args)
+        }
+    }
 }
